@@ -1081,7 +1081,7 @@ footer {
 
                 p {
                     width: 47%;
-                    line-height: 2.4em; 
+                    line-height: 2.4em;
                     letter-spacing: 0.3em;
 
                     @include m.pc {
@@ -1098,10 +1098,9 @@ footer {
                     margin-bottom: 20px;
 
                     @include m.pc {
-                        margin-bottom: 10px;
-                        flex-wrap: wrap;
-                        height: 130px;
-                    }
+                        margin-bottom: 15px;
+              }
+                
 
                     .category {
                         background-color: #fff;
@@ -1112,13 +1111,13 @@ footer {
                         width: 10%;
                         display: flex;
                         justify-content: space-between; // 横並びで左右に散らす
-                        
+
                         @include m.pc {
-                            width: 7%;
-                            padding: 5px 10px;
-                                margin-bottom: 10px;
-                                display: inline;
-                                line-height: 2em;
+                            width: 35px;
+                            display: inline;
+                            margin-right: 15px;
+                            font-size: 0.875rem;
+                            line-height: 3em;
                         }
                     }
 
@@ -1129,8 +1128,7 @@ footer {
 
                         @include m.pc {
                             display: block;
-                            width: 81%;
-                            font-size: 0.85rem;
+                            font-size: 0.75rem;
                             line-height: 1.7
                         }
 
@@ -1166,7 +1164,8 @@ footer {
                     @include m.pc {
                         display: block;
                         padding-left: 0px;
-                        font-size: 0.875rem;
+                        font-size: 0.75rem;
+                        letter-spacing: .4em;
                     }
 
                 }

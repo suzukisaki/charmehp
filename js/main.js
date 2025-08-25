@@ -57,7 +57,7 @@ $(function () {
     arrows: false,
     asNavFor: '.slider-img'
   });
-  
+
   $('.slider-img').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -90,10 +90,16 @@ $(function () {
    ページ読み込み完了でローディング非表示
   ===================================================*/
   $(window).on('load', function () {
-    $(".loader").delay(1500).fadeOut('slow');
-    $(".loading_txt").delay(1200).fadeOut('slow');
+    if (!sessionStorage.getItem('visited')) {
+      // 初回だけローディングを表示
+      $(".loader").delay(1500).fadeOut('slow');
+      $(".loading_txt").delay(1200).fadeOut('slow');
+      sessionStorage.setItem('visited', 'true');
+    } else {
+      // 2回目以降は即非表示
+      $(".loader, .loading_txt").hide();
+    }
   });
-
 
   /*=================================================
    ふわっと出てくる 

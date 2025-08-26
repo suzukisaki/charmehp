@@ -1023,9 +1023,7 @@ footer p {
 }
 @media screen and (max-width: 1000px) {
   .menu-page .menu-items .menu-item dl dt {
-    margin-bottom: 10px;
-    flex-wrap: wrap;
-    height: 130px;
+    margin-bottom: 15px;
   }
 }
 .menu-page .menu-items .menu-item dl dt .category {
@@ -1040,11 +1038,11 @@ footer p {
 }
 @media screen and (max-width: 1000px) {
   .menu-page .menu-items .menu-item dl dt .category {
-    width: 7%;
-    padding: 5px 10px;
-    margin-bottom: 10px;
+    width: 35px;
     display: inline;
-    line-height: 2em;
+    margin-right: 15px;
+    font-size: 0.875rem;
+    line-height: 3em;
   }
 }
 .menu-page .menu-items .menu-item dl dt .contents {
@@ -1055,8 +1053,7 @@ footer p {
 @media screen and (max-width: 1000px) {
   .menu-page .menu-items .menu-item dl dt .contents {
     display: block;
-    width: 81%;
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     line-height: 1.7;
   }
 }
@@ -1090,7 +1087,8 @@ footer p {
   .menu-page .menu-items .menu-item dl dd {
     display: block;
     padding-left: 0px;
-    font-size: 0.875rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.4em;
   }
 }
 .menu-page .menu-items .menu-item dl:first-of-type {

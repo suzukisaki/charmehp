@@ -90,22 +90,21 @@ $(function () {
    ページ読み込み完了でローディング非表示
   ===================================================*/
 
-  // 内部リンククリック時は「2回目扱い」にしてから遷移
-$('a[href^="index.html#"]').on('click', function () {
-  $(".loader, .loading_txt").hide();
-});
-// ページ読み込み時
-$(window).on('load', function () {
-  if (!localStorage.getItem('visited')) {
-    // 初回だけローディングを表示
-    $(".loader").delay(1500).fadeOut('slow');
-    $(".loading_txt").delay(1200).fadeOut('slow');
-    localStorage.setItem('visited', 'true');
-  } else {
-    // 2回目以降は即非表示
-    $(".loader, .loading_txt").hide();
-  }
-});
+  document.addEventListener("DOMContentLoaded", function () {
+    if (localStorage.getItem("visited")) {
+      // すでに訪問済みならローディング非表示
+      document.querySelectorAll(".loader, .loading_txt").forEach(el => {
+        el.style.display = "none";
+      });
+    } else {
+      // 初回アクセス時のみローディングを出してから visited を保存
+      window.addEventListener("load", function () {
+        $(".loader").delay(1500).fadeOut('slow');
+        $(".loading_txt").delay(1200).fadeOut('slow');
+        localStorage.setItem("visited", "true");
+      });
+    }
+  });
 
 
   /*=================================================

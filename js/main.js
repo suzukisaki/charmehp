@@ -90,11 +90,11 @@ $(function () {
    ページ読み込み完了でローディング非表示
   ===================================================*/
   $(window).on('load', function () {
-    if (!sessionStorage.getItem('visited')) {
+    if (!localStorage .getItem('visited')) {
       // 初回だけローディングを表示
       $(".loader").delay(1500).fadeOut('slow');
       $(".loading_txt").delay(1200).fadeOut('slow');
-      sessionStorage.setItem('visited', 'true');
+      localStorage.setItem('visited', 'true');
     } else {
       // 2回目以降は即非表示
       $(".loader, .loading_txt").hide();

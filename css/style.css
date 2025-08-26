@@ -259,13 +259,13 @@ header .mask {
   top: 0;
   bottom: 0;
   left: 0;
-  transition: all 0.5s;
   background-color: #DAD6D3;
   padding: 100px 50px;
   z-index: 3;
 }
 .open nav ul {
-  display: block;
+  display: inline-block;
+  transition: all 1s;
 }
 .open nav ul li {
   margin-bottom: 30px;
@@ -664,8 +664,8 @@ header.reservation-color .icons img[alt=youtube] {
 }
 @media screen and (max-width: 1000px) {
   .voice .voice-left .voice-text {
-    padding-inline: 30px;
-    margin-inline: 0;
+    padding-inline: 20px;
+    margin-inline: 8px;
     height: 300px;
   }
 }

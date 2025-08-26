@@ -273,18 +273,17 @@ header {
         top: 0;
         bottom: 0;
         left: 0;
-        transition: all 0.5s;
         background-color: #DAD6D3;
         padding: 100px 50px;
         z-index: 3;
 
         ul {
-            display: block;
+            display: inline-block;
+            transition: all 1s;
 
             li {
                 margin-bottom: 30px;
             }
-
         }
 
         .icons {
@@ -697,9 +696,10 @@ header.reservation-color {
             margin-inline: 30px;
 
             @include m.pc {
-                padding-inline: 30px;
-                margin-inline: 0;
+                padding-inline: 20px;
+                margin-inline:8px;
                 height: 300px;
+
             }
 
             .comment {

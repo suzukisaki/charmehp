@@ -90,10 +90,10 @@ $(function () {
    ページ読み込み完了でローディング非表示
   ===================================================*/
   $(window).on('load', function () {
-    if (!localStorage .getItem('visited')) {
+    if (!sessionStorage.getItem('visited')) {
       // 初回だけローディングを表示
-      $(".loader").delay(1500).fadeOut('slow');
-      $(".loading_txt").delay(1200).fadeOut('slow');
+      $(".loader").delay(1200).fadeOut('slow');
+      $(".loading_txt").delay(1000).fadeOut('slow');
       localStorage.setItem('visited', 'true');
     } else {
       // 2回目以降は即非表示

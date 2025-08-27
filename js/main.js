@@ -93,7 +93,7 @@ $(function () {
 
 // 内部リンククリック時は「2回目扱い」にしてから遷移
 $('a[href^="index.html#"]').on('click', function () {
-  localStorage.setItem('visited', 'true');
+  sessionStorage.setItem('visited', 'true');
 });
 
   // ページ読み込み時

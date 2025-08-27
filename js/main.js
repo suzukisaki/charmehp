@@ -89,18 +89,23 @@ $(function () {
   /*=================================================
    ページ読み込み完了でローディング非表示
   ===================================================*/
-  $(window).on('load', function () {
-    if (!sessionStorage.getItem('visited')) {
-      // 初回だけローディングを表示
-      $(".loader").delay(1200).fadeOut('slow');
-      $(".loading_txt").delay(1000).fadeOut('slow');
-      localStorage.setItem('visited', 'true');
-    } else {
-      // 2回目以降は即非表示
-      $(".loader, .loading_txt").hide();
-    }
-  });
+// ページ読み込み時
+$(window).on('load', function () {
+  if (!localStorage.getItem('visited')) {
+    // 初回だけローディングを表示
+    $(".loader").delay(1500).fadeOut('slow');
+    $(".loading_txt").delay(1200).fadeOut('slow');
+    localStorage.setItem('visited', 'true');
+  } else {
+    // 2回目以降は即非表示
+    $(".loader, .loading_txt").hide();
+  }
+});
 
+// 内部リンククリック時は「2回目扱い」にしてから遷移
+$('a[href^="index.html#"]').on('click', function () {
+  localStorage.setItem('visited', 'true');
+});
   /*=================================================
    ふわっと出てくる 
   ===================================================*/

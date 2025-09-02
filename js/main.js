@@ -1,16 +1,13 @@
-// 穴埋め形式です。空いている箇所を埋めて実装してください
-
-$(function () {
   /*=================================================
   ハンバーガ―メニュー
   ===================================================*/
   // ハンバーガーメニューをクリックした時
-  $(".toggle-btn ").on("click", function () {
+  $(".toggle-btn").on("click", function () {
     $("header").toggleClass("open");
   });
   // メニューのリンクをクリックした時
   $("nav a").on("click", function () {
-    $("header").removeClass("open")
+    $("header").removeClass("open");
   });
 
 
@@ -47,9 +44,9 @@ $(function () {
   });
 
 
-  /*=================================================
-  スリック
-  ===================================================*/
+  // /*=================================================
+  // スリック
+  // ===================================================*/
   $('.slider-text').slick({
     dots: true,
     autoplay: true,
@@ -90,24 +87,17 @@ $(function () {
    ページ読み込み完了でローディング非表示
   ===================================================*/
 
-
-// 内部リンククリック時は「2回目扱い」にしてから遷移
-$('a[href^="index.html#"]').on('click', function () {
-  sessionStorage.setItem('visited', 'true');
+$(window).on('load', function () {
+  if (!sessionStorage.getItem('visited')) {
+    // 初回だけローディングを表示
+    $(".loader").delay(1600).fadeOut('slow');
+    $(".loading_txt").delay(1200).fadeOut('slow');
+    sessionStorage.setItem('visited', 'true');
+  } else {
+    // 2回目以降は即非表示
+    $(".loader, .loading_txt").hide();
+  }
 });
-
-  // ページ読み込み時
-  $(window).on('load', function () {
-    if (!sessionStorage.getItem('visited')) {
-      // 初回だけローディングを表示
-      $(".loader").delay(1500).fadeOut('slow');
-      $(".loading_txt").delay(1200).fadeOut('slow');
-      sessionStorage.setItem('visited', 'true');
-    } else {
-      // 2回目以降は即非表示
-      $(".loader, .loading_txt").hide();
-    }
-  });
 
 
   /*=================================================
@@ -116,18 +106,12 @@ $('a[href^="index.html#"]').on('click', function () {
 
   $(window).scroll(function () {
     $(".fadeIn,.fadeIn-right,.fadeIn-left").each(function () {
-      var scroll = $(window).scrollTop();
-      var target = $(this).offset().top;
-      var windowHeight = $(window).height();
+      let scroll = $(window).scrollTop();
+      let target = $(this).offset().top;
+      let windowHeight = $(window).height();
       if (scroll > target - windowHeight + $(this).outerHeight()) {
         // outerHeight()はpaddingを含めた高さを取得する
         $(this).addClass("is-show");
       }
     });
   });
-
-});
-
-
-
-

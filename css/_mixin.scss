@@ -1,0 +1,9 @@
+$pc: 1000px;
+$tab: 700px;
+$sp: 460px;
+
+@mixin pc{
+    @media screen and (max-width:($pc)) {
+        @content;
+    }
+}
